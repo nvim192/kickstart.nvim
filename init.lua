@@ -643,6 +643,7 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
+        jdtls = {},
         volar = {
           filetypes = { 'vue', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
           init_options = {
