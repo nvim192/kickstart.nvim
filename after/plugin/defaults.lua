@@ -19,8 +19,8 @@ vim.keymap.set('n', '<leader>gd', ':Git diff %<CR>')
 -- vim.keymap.set('n', '<leader>gc', ':Git checkout %<CR>')
 -- vim.keymap.set('n', '<leader>gh', ':Gitsigns preview_hunk_inline<CR>')
 --
-vim.keymap.set('n', '<leader>pv', ':NvimTreeToggle<CR>')
-vim.keymap.set('n', '<leader>pf', ':NvimTreeFindFileToggle<CR>')
+vim.keymap.set('n', '<leader>pv', ':Neotree toggle<CR>')
+vim.keymap.set('n', '<leader>pf', ':Neotree reveal<CR>')
 
 -- vim.keymap.set('n', '<C-p>', ':GFiles --cached --others --exclude-standard<CR>')
 -- vim.keymap.set('n', '<C-b>', ':Buffers<CR>')
