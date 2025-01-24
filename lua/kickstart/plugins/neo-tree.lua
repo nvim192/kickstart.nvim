@@ -40,6 +40,8 @@ return {
       window = {
         mappings = {
           ['\\'] = 'close_window',
+          ['/'] = 'noop',
+          ['#'] = 'fuzzy_finder',
         },
       },
     },
