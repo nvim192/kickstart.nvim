@@ -11,6 +11,7 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 vim.keymap.set('v', '<leader>y', '"+y')
+vim.keymap.set('n', '<leader>w', ':w<CR>')
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 vim.keymap.set('n', '<leader>gg', ':aboveleft Git<CR>')
