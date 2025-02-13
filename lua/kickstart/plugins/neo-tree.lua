@@ -36,6 +36,7 @@ return {
     { '\\', ':Neotree toggle<CR>', desc = 'NeoTree toggle', silent = true },
   },
   opts = {
+    open_files_do_not_replace_types = { 'copilot-chat' },
     filesystem = {
       window = {
         mappings = {
