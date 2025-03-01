@@ -44,10 +44,10 @@ return {
         desc = 'CopilotChat - Ask input',
       },
       -- {
-      --   "<leader>ax",
-      --   ":CopilotChatInline<cr>",
-      --   mode = "x",
-      --   desc = "CopilotChat - Inline chat",
+      --   '<leader>ax',
+      --   ':CopilotChatInline<cr>',
+      --   mode = 'x',
+      --   desc = 'CopilotChat - Inline chat',
       -- },
       -- Custom input for CopilotChat
       {
@@ -68,20 +68,20 @@ return {
       --   desc = "CopilotChat - Generate commit message for staged changes",
       -- },
       -- Quick chat with Copilot
-      {
-        '<leader>aq',
-        function()
-          local input = vim.fn.input 'Quick Chat: '
-          if input ~= '' then
-            vim.cmd('CopilotChatBuffer ' .. input)
-          end
-        end,
-        desc = 'CopilotChat - Quick chat',
-      },
+      -- {
+      --   '<leader>aq',
+      --   function()
+      --     local input = vim.fn.input 'Quick Chat: '
+      --     if input ~= '' then
+      --       vim.cmd('CopilotChatBuffer ' .. input)
+      --     end
+      --   end,
+      --   desc = 'CopilotChat - Quick chat',
+      -- },
       -- Debug
       -- { "<leader>ad", "<cmd>CopilotChatDebugInfo<cr>", desc = "CopilotChat - Debug Info" },
       -- Fix the issue with diagnostic
-      -- { "<leader>af", "<cmd>CopilotChatFixDiagnostic<cr>", desc = "CopilotChat - Fix Diagnostic" },
+      { '<leader>af', '<cmd>CopilotChatFixDiagnostic<cr>', desc = 'CopilotChat - Fix Diagnostic' },
       -- Clear buffer and chat history
       { '<leader>al', '<cmd>CopilotChatReset<cr>', desc = 'CopilotChat - Clear buffer and chat history' },
       -- Toggle Copilot Chat Vsplit
