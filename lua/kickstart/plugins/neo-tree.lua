@@ -42,7 +42,10 @@ return {
         mappings = {
           ['\\'] = 'close_window',
           ['/'] = 'noop',
+          ['z'] = 'noop',
           ['#'] = 'fuzzy_finder',
+          ['Z'] = 'expand_all_nodes',
+          ['C'] = 'close_all_nodes',
         },
       },
     },
