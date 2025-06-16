@@ -655,7 +655,7 @@ require('lazy').setup({
         --
 
         jdtls = {},
-        volar = {
+        vue_ls = {
           filetypes = { 'vue', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
           init_options = {
             vue = {
