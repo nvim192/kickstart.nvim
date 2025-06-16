@@ -35,3 +35,5 @@ vim.api.nvim_create_autocmd('BufEnter', {
   end,
   pattern = '*',
 })
+
+vim.cmd.colorscheme 'catppuccin-mocha'
