@@ -2,6 +2,7 @@ return {
   {
     'CopilotC-Nvim/CopilotChat.nvim',
     branch = 'main',
+    lazy = false,
     dependencies = {
       { 'github/copilot.vim' },
       { 'nvim-telescope/telescope.nvim' },
