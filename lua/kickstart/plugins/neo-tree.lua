@@ -25,6 +25,7 @@ vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = open_neo_tree })
 
 return {
   'nvim-neo-tree/neo-tree.nvim',
+  lazy = false,
   version = '*',
   dependencies = {
     'nvim-lua/plenary.nvim',
