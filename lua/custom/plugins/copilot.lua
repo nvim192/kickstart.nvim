@@ -1,5 +1,5 @@
 vim.g.copilot_no_tab_map = true
-vim.g.copilot_node_command = "~/.nvm/versions/node/v18.20.3/bin/node"
+vim.g.copilot_node_command = "~/.nvm/versions/node/v20.18.1/bin/node"
 vim.g.copilot_filetypes = {
   gitcommit = true
 }
