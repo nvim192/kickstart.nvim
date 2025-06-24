@@ -415,7 +415,7 @@ require('lazy').setup({
 
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
-      local actions = require('telescope.actions')
+      local actions = require 'telescope.actions'
       require('telescope').setup {
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
@@ -424,11 +424,11 @@ require('lazy').setup({
           mappings = {
             -- i = { ['<c-enter>'] = 'to_fuzzy_refine' },
             i = {
-                ["<c-d>"] = actions.delete_buffer,
+              ['<c-d>'] = actions.delete_buffer,
             },
             n = {
-                ["<c-d>"] = actions.delete_buffer,
-                ["dd"] = actions.delete_buffer,
+              ['<c-d>'] = actions.delete_buffer,
+              ['dd'] = actions.delete_buffer,
             },
           },
         },
@@ -945,16 +945,17 @@ require('lazy').setup({
   },
 
   -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim',
+  {
+    'folke/todo-comments.nvim',
     event = 'VimEnter',
-    dependencies = { 
-      'nvim-lua/plenary.nvim', 
-      'nvim-telescope/telescope.nvim' 
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
     },
     opts = { signs = false },
     keys = {
       { '<leader>st', '<cmd>TodoTelescope<CR>', mode = 'n', desc = 'Search [T]odo in all the project' },
-    }
+    },
   },
 
   { -- Collection of various small independent plugins/modules
@@ -999,7 +1000,7 @@ require('lazy').setup({
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     dependencies = {
-      "OXY2DEV/markview.nvim",
+      'OXY2DEV/markview.nvim',
     },
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
