@@ -1,3 +1,5 @@
+if vim.g.vscode then
+else
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
 vim.opt.title = true
@@ -37,3 +39,4 @@ vim.api.nvim_create_autocmd('BufEnter', {
 })
 
 vim.cmd.colorscheme 'catppuccin-mocha'
+end

@@ -1,3 +1,109 @@
+if vim.g.vscode then
+print("DEBUG: .codevim.lua is being loaded")
+
+-- Test keymap to verify config is working
+vim.keymap.set('n', '<leader>test', ':echo "Config is working!"<CR>', { desc = 'Test keymap' })
+
+vim.o.relativenumber = true
+vim.o.scrolloff = 10
+
+-- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+vim.o.mouse = ''
+
+-- Enable break indent
+vim.o.breakindent = true
+
+-- Save undo history
+vim.o.undofile = true
+
+-- Preview substitutions live, as you type!
+vim.o.inccommand = 'split'
+
+-- Show which line your cursor is on
+vim.o.cursorline = true
+
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+vim.o.foldmethod = 'indent'
+vim.o.foldlevel = 99
+
+-- https://github.com/vscode-neovim/vscode-neovim/pull/993
+-- vim.keymap.set('n', '<C-d>', '<C-d>zz')
+-- vim.keymap.set('n', '<C-u>', '<C-u>zz')
+-- vim.keymap.set('n', 'n', 'nzzzv')
+-- vim.keymap.set('n', 'N', 'Nzzzv')
+
+-- Keybindings migrated from VS Code keybindings.json
+-- Navigation
+vim.keymap.set('n', '<leader><leader>', '<cmd>lua require("vscode").action("workbench.action.showAllEditorsByMostRecentlyUsed")<CR>', { desc = 'Show recent editors' })
+
+-- File explorer toggle with different behavior based on context
+vim.keymap.set('n', '<leader>pf', function()
+  -- This is a simplified version - in VS Code this had conditional behavior
+  require('vscode').action('workbench.action.toggleSidebarVisibility')
+  require('vscode').action('workbench.files.action.focusFilesExplorer')
+end, { desc = 'Toggle file explorer' })
+
+-- File explorer toggle with different behavior based on context
+vim.keymap.set('n', '<leader>pv', function()
+  -- This is a simplified version - in VS Code this had conditional behavior
+  require('vscode').action('workbench.action.toggleSidebarVisibility')
+  require('vscode').action('workbench.files.action.focusFilesExplorer')
+end, { desc = 'Toggle file explorer' })
+
+-- Git
+vim.keymap.set('n', '<leader>gg', function()
+  require('vscode').action('workbench.view.scm')
+  require('vscode').action('workbench.scm.focus')
+end, { desc = 'Open SCM/Git view' })
+
+-- Coding
+vim.keymap.set('n', '<leader>ca', '<cmd>lua require("vscode").action("editor.action.codeAction")<CR>', { desc = 'Code actions' })
+vim.keymap.set('n', '<leader>e', '<cmd>lua require("vscode").action("editor.action.showHover")<CR>', { desc = 'Show hover' })
+vim.keymap.set('n', '<leader>rn', '<cmd>lua require("vscode").action("editor.action.rename")<CR>', { desc = 'Rename symbol' })
+vim.keymap.set('n', '<leader>ds', '<cmd>lua require("vscode").action("workbench.action.gotoSymbol")<CR>', { desc = 'Go to symbol' })
+vim.keymap.set('n', '<leader>sg', '<cmd>lua require("vscode").action("workbench.action.findInFiles")<CR>', { desc = 'Search in files' })
+vim.keymap.set('n', '<leader>w', '<cmd>lua require("vscode").action("workbench.action.files.save")<CR>', { desc = 'Save file' })
+
+-- Copy in visual mode
+vim.keymap.set('v', '<leader>y', function()
+  require('vscode').action('editor.action.clipboardCopyAction')
+  require('vscode').action('cancelSelection')
+end, { desc = 'Copy and cancel selection' })
+
+-- Format
+vim.keymap.set('n', '<leader>f', '<cmd>lua require("vscode").action("editor.action.formatSelection")<CR>', { desc = 'Format selection' })
+
+-- Chat toggle
+vim.keymap.set('n', '<leader>av', '<cmd>lua require("vscode").action("workbench.action.chat.toggle")<CR>', { desc = 'Toggle chat' })
+
+-- Navigation with 'g' prefix
+vim.keymap.set('n', 'gd', '<cmd>lua require("vscode").action("editor.action.revealDefinition")<CR>', { desc = 'Go to definition' })
+vim.keymap.set('n', 'gr', '<cmd>lua require("vscode").action("editor.action.goToReferences")<CR>', { desc = 'Go to references' })
+vim.keymap.set('n', 'gI', '<cmd>lua require("vscode").action("editor.action.goToImplementation")<CR>', { desc = 'Go to implementation' })
+
+-- Diagnostic navigation
+vim.keymap.set('n', '[d', '<cmd>lua require("vscode").action("editor.action.marker.prevInFiles")<CR>', { desc = 'Previous diagnostic' })
+vim.keymap.set('n', ']d', '<cmd>lua require("vscode").action("editor.action.marker.nextInFiles")<CR>', { desc = 'Next diagnostic' })
+
+-- Git hunk navigation
+vim.keymap.set('n', '[c', '<cmd>lua require("vscode").action("editor.action.dirtydiff.previous")<CR>', { desc = 'Previous git change' })
+vim.keymap.set('n', ']c', '<cmd>lua require("vscode").action("editor.action.dirtydiff.next")<CR>', { desc = 'Next git change' })
+
+-- Git hunk operations
+vim.keymap.set('n', '<leader>hr', '<cmd>lua require("vscode").action("git.revertSelectedRanges")<CR>', { desc = 'Reset/revert git hunk' })
+vim.keymap.set('n', '<leader>ga', '<cmd>lua require("vscode").action("git.stage")<CR>', { desc = 'Git add current file' })
+
+else
+
 --[[
 
 =====================================================================
@@ -1087,3 +1193,5 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+end
