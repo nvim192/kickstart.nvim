@@ -65,6 +65,9 @@ vim.keymap.set('n', '<leader>gg', function()
   require('vscode').action('workbench.scm.focus')
 end, { desc = 'Open SCM/Git view' })
 
+-- Toggle left sidebar
+vim.keymap.set('n', '<leader>q', '<cmd>lua require("vscode").action("workbench.action.toggleSidebarVisibility")<CR>', { desc = 'Toggle left sidebar' })
+
 -- Coding
 vim.keymap.set('n', '<leader>ca', '<cmd>lua require("vscode").action("editor.action.codeAction")<CR>', { desc = 'Code actions' })
 vim.keymap.set('n', '<leader>e', '<cmd>lua require("vscode").action("editor.action.showHover")<CR>', { desc = 'Show hover' })
